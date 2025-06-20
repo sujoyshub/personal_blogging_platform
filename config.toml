@@ -1,0 +1,23 @@
+baseURL = "https://my-blog-domain.com/"
+languageCode = "en-us"
+title = "Sujoy Roy's Tech Blog"
+theme = "ananke"
+paginate = 10
+
+[params]
+  author = "Sujoy Roy"
+  description = "A personal tech blog on Cloud, DevOps, and AI"
+  favicon = "favicon.ico"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
