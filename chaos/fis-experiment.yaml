@@ -1,0 +1,17 @@
+Description: "Chaos experiment to inject 5 seconds delay into S3 operations"
+Targets:
+  S3BucketTarget:
+    ResourceType: "aws:s3:bucket"
+    ResourceArns:
+      - "arn:aws:s3:::your-blog-domain-com"  # replace with your bucket ARN
+Actions:
+  InjectS3Delay:
+    ActionId: "aws:s3:delay-read"
+    Description: "Introduce artificial delay into S3 GET requests"
+    Parameters:
+      delay: "5"  # Delay of 5 seconds
+    Targets:
+      - "S3BucketTarget"
+StopConditions:
+  - Source: "none"
+RoleArn: "arn:aws:iam::123456789012:role/FIS-ExperimentRole"  # replace with your IAM role ARN
